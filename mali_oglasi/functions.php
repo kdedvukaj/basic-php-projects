@@ -36,4 +36,32 @@ function get_all_user_ads($id){
 
     return $result;
 }
+
+function getOne($id){
+    $sql = "SELECT *, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE oglas.id= '$id'";
+
+    $query = mysqli_query(db(), $sql);
+    $result = mysqli_fetch_assoc($query);
+
+    return $result;
+}
+
+function getCategory($cat){
+$sql = "SELECT *, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE oglas.category= '$cat'";
+
+    $query = mysqli_query(db(), $sql);
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+    return $result;
+}
+
+function getAllFromUser($name){
+$sql = "SELECT *, users.name FROM oglas INNER JOIN users ON oglas.user_id = users.id WHERE users.name = '$name'";
+
+    $query = mysqli_query(db(), $sql);
+    $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+    return $result;
+}
+
 ?>
