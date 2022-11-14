@@ -1,4 +1,12 @@
-<?php ?>
+<?php
+
+    if(isset($_POST['submit'])){
+        $email = htmlspecialchars($_POST['email']);
+        $title = htmlspecialchars($_POST['title']);
+        $ingredients = htmlspecialchars($_POST['ingredients']);
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +14,7 @@
 
     <section class="container grey-text">
         <h4 class="center">Add a Pizza</h4>
-        <form class="white" action="" method="">
+        <form class="white" action="add.php" method="POST">
             <label for="">Your Email:</label>
             <input type="text" name="email">
             <label for="">Pizza Title:</label>
