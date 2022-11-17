@@ -36,7 +36,7 @@
         }
 
         if(array_filter($errors)){
-            // echo "errors in the form";
+         echo "errors in the form";
         }else{
             header('Location: index.php');
         }
